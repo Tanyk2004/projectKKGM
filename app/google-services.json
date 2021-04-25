@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "863462857624",
+    "project_id": "projectkkgm",
+    "storage_bucket": "projectkkgm.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:863462857624:android:b2d846f33a86f66e7ae9ed",
+        "android_client_info": {
+          "package_name": "com.wdfc.chattingapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "863462857624-ie5lko32b789tkt65bn65nnnpqmda31d.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDrMWxRBFIgoXVt7-6pvWZrfUNoxDkaGr0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "863462857624-ie5lko32b789tkt65bn65nnnpqmda31d.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
