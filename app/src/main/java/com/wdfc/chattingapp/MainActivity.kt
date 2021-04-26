@@ -8,15 +8,15 @@ import android.widget.TextView
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
-        overridePendingTransition(R.anim.fadein , R.anim.fadeout)
+        overridePendingTransition(R.anim.fadein , R.anim.righttoleft)
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
 
-        var txt = findViewById<TextView>(R.id.UwU)
+        var txt = findViewById<TextView>(R.id.txt_go_to_sign_up)
        txt.setOnClickListener {
            startActivity(Intent(this, sign_up::class.java))
-           finish()
+
        }
 
 }}

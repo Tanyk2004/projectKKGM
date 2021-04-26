@@ -84,6 +84,10 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:background="@drawable/roundedbuttons"
+
+
+        android:hapticFeedbackEnabled="true"
+        android:state_pressed="false"
         android:text="SIGN UP"
         android:textColor="#0D4675"
         app:layout_constraintBottom_toBottomOf="parent"

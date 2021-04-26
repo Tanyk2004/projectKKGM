@@ -13,5 +13,8 @@ class sign_up : AppCompatActivity() {
         var animation = AnimationUtils.loadAnimation(this, R.anim.zoomin)
         var sign_up_button = findViewById<Button>(R.id.btn_sign_up)
         sign_up_button.startAnimation(animation)
+        sign_up_button.setOnClickListener {
+
+        }
     }
 }
