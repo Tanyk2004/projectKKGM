@@ -10,7 +10,6 @@ import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 
@@ -25,13 +24,13 @@ class sign_up : AppCompatActivity() {
         var animation = AnimationUtils.loadAnimation(this, R.anim.zoomin)
         var logo_view = findViewById<ImageView>(R.id.babble_logo2)
         logo_view.startAnimation(animation)
-        var sign_up_button = findViewById<Button>(R.id.btn_sign_up)
+        var sign_up_button = findViewById<Button>(R.id.btn_login)
         sign_up_button.startAnimation(animation)
 
 
         //************************ SIGN UP CREDENTIALS ************************************
-        var sign_up_email = findViewById<TextView>(R.id.txt_email_sign_up)
-        var  sign_up_password = findViewById<TextView>(R.id.txt_sign_up_password)
+        var sign_up_email = findViewById<TextView>(R.id.txt_email_login)
+        var  sign_up_password = findViewById<TextView>(R.id.txt_password_login)
         var sign_up_password_confirm = findViewById<TextView>(R.id.txt_confirm_password)
         //************************ SIGN UP CREDENTIALS ************************************
 
@@ -55,8 +54,8 @@ class sign_up : AppCompatActivity() {
         }
     }
     private fun checkCreds():Boolean{
-        var sign_up_email = findViewById<TextView>(R.id.txt_email_sign_up)
-        var  sign_up_password = findViewById<TextView>(R.id.txt_sign_up_password)
+        var sign_up_email = findViewById<TextView>(R.id.txt_email_login)
+        var  sign_up_password = findViewById<TextView>(R.id.txt_password_login)
         var sign_up_password_confirm = findViewById<TextView>(R.id.txt_confirm_password)
 
         if(sign_up_email.text.toString().isEmpty()){
