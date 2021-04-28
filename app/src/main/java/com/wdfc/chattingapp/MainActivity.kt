@@ -17,7 +17,7 @@ class MainActivity : AppCompatActivity() {
         logo_view.startAnimation(logo_animation)
         var txt = findViewById<TextView>(R.id.txt_go_to_sign_up)
        txt.setOnClickListener {
-           startActivity(Intent(this, sign_up::class.java))
+           startActivity(Intent(this, dashboard::class.java))
            finish()
        }
 

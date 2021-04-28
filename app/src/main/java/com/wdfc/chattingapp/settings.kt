@@ -12,6 +12,7 @@ import com.google.firebase.ktx.Firebase
 class settings : AppCompatActivity() {
     private lateinit var auth: FirebaseAuth
     override fun onCreate(savedInstanceState: Bundle?) {
+        overridePendingTransition(R.anim.righttoleft,R.anim.left_out)
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_settings)
         auth = Firebase.auth
@@ -21,6 +22,7 @@ class settings : AppCompatActivity() {
         var dashboar_button = findViewById<Button>(R.id.btn_dashboard)
         dashboar_button.setOnClickListener {
             startActivity(Intent(this, dashboard::class.java))
+            overridePendingTransition(R.anim.righttoleft,R.anim.lefttoright)
             finish()
         }
 

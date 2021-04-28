@@ -13,6 +13,7 @@ import org.w3c.dom.Text
 class dashboard : AppCompatActivity() {
     private lateinit var auth: FirebaseAuth
     override fun onCreate(savedInstanceState: Bundle?) {
+        overridePendingTransition(R.anim.lefttoright,R.anim.right_out)
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_dashboard)
         auth = Firebase.auth
