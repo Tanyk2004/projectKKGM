@@ -25,6 +25,12 @@ class settings : AppCompatActivity() {
             overridePendingTransition(R.anim.righttoleft,R.anim.lefttoright)
             finish()
         }
+        var logout_button =findViewById<Button>(R.id.btn_logout)
+        logout_button.setOnClickListener {
+            startActivity(Intent(this, MainActivity::class.java))
+            finish()
+        }
+
 
 
     }
