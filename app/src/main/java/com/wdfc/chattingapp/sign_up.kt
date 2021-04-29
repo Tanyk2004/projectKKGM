@@ -17,7 +17,7 @@ class sign_up : AppCompatActivity() {
     private lateinit var auth: FirebaseAuth
     override fun onCreate(savedInstanceState: Bundle?) {
 
-        overridePendingTransition(R.anim.righttoleft,R.anim.fadeout)
+        overridePendingTransition(R.anim.fadein,R.anim.fadeout)
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_sign_up)
         auth = Firebase.auth
@@ -42,7 +42,7 @@ class sign_up : AppCompatActivity() {
                 .addOnCompleteListener(this) { task ->
                     if (task.isSuccessful) {
                         // Sign in success, update UI with the signed-in user's information
-                        startActivity(Intent(this, dashboard :: class.java))
+                        startActivity(Intent(this, username :: class.java))
                         finish()
                     } else {
                         // If sign in fails, display a message to the user.

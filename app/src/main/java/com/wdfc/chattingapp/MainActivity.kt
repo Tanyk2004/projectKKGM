@@ -65,7 +65,7 @@ class MainActivity : AppCompatActivity() {
     private fun updateUI( user : FirebaseUser?){
         if( user!= null){
             //Toast.makeText(baseContext, "Logging in", Toast.LENGTH_SHORT).show()
-            startActivity(Intent(this, dashboard::class.java))
+            startActivity(Intent(this, username::class.java))
             finish()
         }
     }
