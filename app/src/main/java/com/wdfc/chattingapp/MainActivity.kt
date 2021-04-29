@@ -30,13 +30,13 @@ class MainActivity : AppCompatActivity() {
         var logo_view = findViewById<ImageView>(R.id.babble_logo)
         logo_view.startAnimation(logo_animation)
         var txt = findViewById<TextView>(R.id.txt_go_to_sign_up)
-       txt.setOnClickListener {
-           startActivity(Intent(this, sign_up::class.java))
-           finish()
-       }
+        txt.setOnClickListener {
+            startActivity(Intent(this, sign_up::class.java))
+            finish()
+        }
         var btn_login = findViewById<Button>(R.id.btn_login)
         btn_login.setOnClickListener {
-           var can_login =  checkCreds()
+            var can_login =  checkCreds()
             if ( can_login){
                 auth.signInWithEmailAndPassword(email_login.text.toString(), password_login.text.toString())
                         .addOnCompleteListener(this) { task ->
@@ -56,7 +56,7 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-}
+    }
     public override fun onStart(){
         super.onStart()
         val currentUser = auth.currentUser
