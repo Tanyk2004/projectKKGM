@@ -48,7 +48,7 @@ class MainActivity : AppCompatActivity() {
                             } else {
                                 // If sign in fails, display a message to the user.
 
-                                Toast.makeText(baseContext, "Authentication failed." + email_login.text.toString() +  password_login.text.toString()+task.exception.toString(),
+                                Toast.makeText(baseContext, "Authentication failed. \n" + task.exception.toString(),
                                         Toast.LENGTH_SHORT).show()
                                 updateUI(null)
                             }
