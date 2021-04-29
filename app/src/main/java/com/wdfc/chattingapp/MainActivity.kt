@@ -17,13 +17,15 @@ import org.w3c.dom.Text
 
 class MainActivity : AppCompatActivity() {
     private lateinit var auth: FirebaseAuth
+    private lateinit var email_login:TextView
+    private lateinit var password_login: TextView
     override fun onCreate(savedInstanceState: Bundle?) {
         overridePendingTransition(R.anim.fadein , R.anim.righttoleft)
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         auth = Firebase.auth
-        var email_login = findViewById<TextView>(R.id.txt_email_login)
-        var password_login = findViewById<TextView>(R.id.txt_password_login)
+        email_login = findViewById<TextView>(R.id.txt_email_login)
+        password_login = findViewById<TextView>(R.id.txt_password_login)
         var logo_animation = AnimationUtils.loadAnimation(this, R.anim.scale_in)
         var logo_view = findViewById<ImageView>(R.id.babble_logo)
         logo_view.startAnimation(logo_animation)
@@ -46,13 +48,10 @@ class MainActivity : AppCompatActivity() {
                             } else {
                                 // If sign in fails, display a message to the user.
 
-                                Toast.makeText(baseContext, "Authentication failed.",
+                                Toast.makeText(baseContext, "Authentication failed." + email_login.text.toString() +  password_login.text.toString()+task.exception.toString(),
                                         Toast.LENGTH_SHORT).show()
                                 updateUI(null)
-                                // ...
                             }
-
-                            // ...
                         }
             }
         }
@@ -66,7 +65,7 @@ class MainActivity : AppCompatActivity() {
     private fun updateUI( user : FirebaseUser?){
         if( user!= null){
             //Toast.makeText(baseContext, "Logging in", Toast.LENGTH_SHORT).show()
-            startActivity(Intent(this, dashboard:: class.java))
+            startActivity(Intent(this, dashboard::class.java))
             finish()
         }
     }

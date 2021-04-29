@@ -38,7 +38,7 @@ class sign_up : AppCompatActivity() {
         sign_up_button.setOnClickListener {
             var can_login = checkCreds()
             if (can_login){
-            auth.createUserWithEmailAndPassword(sign_up_email.text.toString(), sign_up_password.toString())
+            auth.createUserWithEmailAndPassword(sign_up_email.text.toString(), sign_up_password.text.toString())
                 .addOnCompleteListener(this) { task ->
                     if (task.isSuccessful) {
                         // Sign in success, update UI with the signed-in user's information
