@@ -71,9 +71,9 @@ class username : AppCompatActivity() {
                         try1 = true
                         data = ArrayList<String>()
                     }
-                    else {
+                    else if(data != ArrayList<String>()){
                         var unique_id  = findViewById<TextView>(R.id.txt_unique_id)
-                        unique_id.error = "Sorry this code has already been taken just like your crush"
+                        unique_id.error = "Sorry this ID has already been taken...just like your crush"
                         unique_id.requestFocus()
                         try1  = false
                         data = ArrayList<String>()
