@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.NoActionBar">
-        <activity android:name=".username"></activity>
+        <activity android:name=".billboard"></activity>
+        <activity android:name=".username" />
         <activity android:name=".settings" />
         <activity android:name=".dashboard" />
         <activity android:name=".sign_up" />

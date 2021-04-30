@@ -31,7 +31,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="284dp"
         android:fontFamily="@font/roboto_light"
-        android:text="Create your username:"
+        android:text="Create your username :"
         android:textColor="#FFFFFF"
         android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/txt_email_login"
