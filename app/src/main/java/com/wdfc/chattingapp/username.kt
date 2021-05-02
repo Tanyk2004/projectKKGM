@@ -18,6 +18,7 @@ class username : AppCompatActivity() {
     var data = ArrayList<String>()
     private lateinit var auth:FirebaseAuth
     var user_uid = ""
+    var try1 = 1
 
     override fun onCreate(savedInstanceState: Bundle?) {
         overridePendingTransition(R.anim.righttoleft,R.anim.left_out)
@@ -33,58 +34,54 @@ class username : AppCompatActivity() {
 
         var profile_button = findViewById<Button>(R.id.btn_profile)
         profile_button.setOnClickListener {
-
             var username_profile= findViewById<TextView>(R.id.txt_username).text.toString()
             var unique_id  = findViewById<TextView>(R.id.txt_unique_id).text.toString()
 
-            var can_complete = check_uniqueness(unique_id)
-            if ( can_complete){
-            var userInfo = hashMapOf(
 
-                "username" to username_profile,
-                "unique_id" to unique_id,
-                "uid" to user_uid
-            )
+            var thiefs = db.collection("users").whereEqualTo("unique_id" , unique_id).get()
+                    .addOnSuccessListener { document ->
+                            for ( i in document){
+                                data.add(i.get("unique_id").toString())
 
-        db.collection("users").document(user_uid).set(userInfo)
-                .addOnSuccessListener {  Toast.makeText(baseContext , "user info added successfully", Toast.LENGTH_SHORT).show()
-                startActivity(Intent(this, dashboard :: class.java))
-                }
+
+                            }
+                            if ( data.isEmpty()){
+                                try1 = 0
+                                data = ArrayList<String>()
+
+
+                            }
+                            else {
+                                var unique_id  = findViewById<TextView>(R.id.txt_unique_id)
+                                unique_id.error = "Sorry this ID has already been taken...just like your crush"
+                                unique_id.requestFocus()
+                                data = ArrayList<String>()
+
+                            }
+                        if (try1==0 ){
+                            var userInfo = hashMapOf(
+
+                                    "username" to username_profile,
+                                    "unique_id" to unique_id,
+                                    "uid" to user_uid
+
+
+                            )
+                            db.collection("users").document(user_uid).set(userInfo)
+                                    .addOnSuccessListener {  Toast.makeText(baseContext , "user info added successfully", Toast.LENGTH_SHORT).show()
+                                        startActivity(Intent(this, dashboard :: class.java))
+                                    }
+
+
+
+                    }
+
+
+
             }
         }
 
     }
-    var try1 = false
-    fun check_uniqueness(Id : String) : Boolean
-    {
-        val db = Firebase.firestore
 
 
-        var thiefs = db.collection("users").whereEqualTo("unique_id" , Id.trim()).get()
-            .addOnSuccessListener { document ->
-                if(document != null){
-               for ( i in document){
-                   data.add(i.get("unique_id").toString())
-
-               }
-                    if ( data == ArrayList<String>()){
-                        try1 = true
-                        data = ArrayList<String>()
-                    }
-                    else if(data != ArrayList<String>()){
-                        var unique_id  = findViewById<TextView>(R.id.txt_unique_id)
-                        unique_id.error = "Sorry this ID has already been taken...just like your crush"
-                        unique_id.requestFocus()
-                        try1  = false
-                        data = ArrayList<String>()
-                        }
-                }
-                else{
-                    try1 = false
-                    data = ArrayList<String>()
-                }
-
-            }
-        return try1
     }
-}
