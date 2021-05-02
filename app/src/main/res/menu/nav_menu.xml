@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<item
+    android:id = "@+id/add_profiles"
+    android:icon="@drawable/add_symbol"
+    android:title="Add profiles"
+    />
+    <item
+        android:id = "@+id/view_profiles"
+        android:icon="@drawable/view_profiles"
+        android:title="View profiles"
+        />
+
+</menu>

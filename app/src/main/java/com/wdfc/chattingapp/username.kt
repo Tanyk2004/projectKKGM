@@ -50,6 +50,7 @@ class username : AppCompatActivity() {
                 .addOnSuccessListener {  Toast.makeText(baseContext , "user info added successfully", Toast.LENGTH_SHORT).show()
                 startActivity(Intent(this, dashboard :: class.java))
                 }
+
             }
         }
 
@@ -62,6 +63,7 @@ class username : AppCompatActivity() {
 
         var thiefs = db.collection("users").whereEqualTo("unique_id" , Id.trim()).get()
             .addOnSuccessListener { document ->
+
                 if(document != null){
                for ( i in document){
                    data.add(i.get("unique_id").toString())
@@ -85,6 +87,9 @@ class username : AppCompatActivity() {
                 }
 
             }
+                .addOnFailureListener {
+
+                }
         return try1
     }
 }

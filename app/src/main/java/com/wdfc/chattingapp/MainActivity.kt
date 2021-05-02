@@ -23,17 +23,27 @@ class MainActivity : AppCompatActivity() {
         overridePendingTransition(R.anim.fadein , R.anim.righttoleft)
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+
+        //goes to billboard *********************
+        startActivity(Intent(this, billboard :: class.java))
+        //goes to billboard *********************
+
+
         auth = Firebase.auth
         email_login = findViewById<TextView>(R.id.txt_email_login)
         password_login = findViewById<TextView>(R.id.txt_password_login)
+
         var logo_animation = AnimationUtils.loadAnimation(this, R.anim.scale_in)
         var logo_view = findViewById<ImageView>(R.id.babble_logo)
         logo_view.startAnimation(logo_animation)
+
         var txt = findViewById<TextView>(R.id.txt_go_to_sign_up)
         txt.setOnClickListener {
             startActivity(Intent(this, sign_up::class.java))
             finish()
         }
+
         var btn_login = findViewById<Button>(R.id.btn_login)
         btn_login.setOnClickListener {
             var can_login =  checkCreds()
@@ -56,6 +66,8 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
+
+
     }
     public override fun onStart(){
         super.onStart()
@@ -64,8 +76,10 @@ class MainActivity : AppCompatActivity() {
     }
     private fun updateUI( user : FirebaseUser?){
         if( user!= null){
-            //Toast.makeText(baseContext, "Logging in", Toast.LENGTH_SHORT).show()
-            startActivity(Intent(this, username::class.java))
+            Toast.makeText(baseContext, "Logging in", Toast.LENGTH_SHORT).show()
+            //goes to billboard *********************
+            startActivity(Intent(this, billboard :: class.java))
+            //goes to billboard *********************
             finish()
         }
     }
