@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".fragments.add_profiles">
 
     <!-- TODO: Update blank fragment layout -->
@@ -25,7 +25,7 @@
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView9"
-            app:layout_constraintVertical_bias="0.123" />
+            app:layout_constraintVertical_bias="0.0" />
 
         <TextView
             android:id="@+id/textView12"
@@ -39,8 +39,8 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/txt_username2"
-            app:layout_constraintVertical_bias="0.082" />
+            app:layout_constraintTop_toBottomOf="@+id/txt_full_name"
+            app:layout_constraintVertical_bias="0.0" />
 
         <TextView
             android:id="@+id/textView13"
@@ -54,8 +54,8 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/txt_username3"
-            app:layout_constraintVertical_bias="0.084" />
+            app:layout_constraintTop_toBottomOf="@+id/txt_city"
+            app:layout_constraintVertical_bias="0.0" />
 
         <TextView
             android:id="@+id/textView14"
@@ -69,11 +69,11 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/txt_username4"
-            app:layout_constraintVertical_bias="0.112" />
+            app:layout_constraintTop_toBottomOf="@+id/txt_type_of_service"
+            app:layout_constraintVertical_bias="0.0" />
 
         <EditText
-            android:id="@+id/txt_username2"
+            android:id="@+id/txt_full_name"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:background="@drawable/backwithborde"
@@ -91,7 +91,7 @@
             app:layout_constraintVertical_bias="0.0" />
 
         <EditText
-            android:id="@+id/txt_username3"
+            android:id="@+id/txt_city"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:background="@drawable/backwithborde"
@@ -109,7 +109,7 @@
             app:layout_constraintVertical_bias="0.0" />
 
         <EditText
-            android:id="@+id/txt_username4"
+            android:id="@+id/txt_type_of_service"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:background="@drawable/backwithborde"
@@ -127,7 +127,7 @@
             app:layout_constraintVertical_bias="0.0" />
 
         <EditText
-            android:id="@+id/txt_username5"
+            android:id="@+id/txt_contact"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:background="@drawable/backwithborde"
@@ -158,6 +158,95 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.0" />
+
+        <Button
+            android:id="@+id/btn_add"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/roundedbuttons"
+            android:text="ADD INFO"
+            android:textColor="#000000"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <ScrollView
+            android:id="@+id/scroll_view"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="32dp"
+            app:layout_constraintBottom_toTopOf="@+id/btn_add"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txt_contact"
+            app:layout_constraintVertical_bias="0.0">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/state_text_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:clickable="true"
+                    android:fontFamily="@font/roboto_light"
+                    android:text="State:"
+                    android:textColor="#FFFFFF"
+                    android:textSize="24sp" />
+
+                <Spinner
+                    android:id="@+id/spinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:clickable="true"
+                    android:spinnerMode="dropdown" />
+
+                <TextView
+                    android:id="@+id/textView19"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_light"
+                    android:text="Additional Information:"
+                    android:textColor="#FFFFFF"
+                    android:textSize="24sp" />
+
+                <EditText
+                    android:id="@+id/txt_additional_info"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/backwithborde"
+                    android:ems="10"
+                    android:gravity="start|top"
+                    android:inputType="textMultiLine"
+                    android:textSize="24sp" />
+
+                <TextView
+                    android:id="@+id/textView10"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:alpha="0"
+                    android:textSize="24sp" />
+
+                <TextView
+                    android:id="@+id/textView20"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:alpha="0"
+                    android:textSize="24sp" />
+
+                <TextView
+                    android:id="@+id/textView21"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:alpha="0"
+                    android:textSize="24sp" />
+
+            </LinearLayout>
+        </ScrollView>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>

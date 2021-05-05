@@ -15,11 +15,11 @@ import com.wdfc.chattingapp.R
 class view_profiles : Fragment() {
     // TODO: Rename and change types of parameters
 
-    val db = Firebase.firestore
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        var profile_array = ArrayList<Array<String>>()
+
 
 
         arguments?.let {

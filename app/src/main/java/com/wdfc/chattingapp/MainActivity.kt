@@ -27,6 +27,7 @@ class MainActivity : AppCompatActivity() {
 
         //goes to billboard *********************
         startActivity(Intent(this, billboard :: class.java))
+        finish()
         //goes to billboard *********************
 
 
@@ -78,7 +79,7 @@ class MainActivity : AppCompatActivity() {
         if( user!= null){
             Toast.makeText(baseContext, "Logging in", Toast.LENGTH_SHORT).show()
             //goes to billboard *********************
-            startActivity(Intent(this, billboard :: class.java))
+            startActivity(Intent(this, dashboard:: class.java))
             //goes to billboard *********************
             finish()
         }

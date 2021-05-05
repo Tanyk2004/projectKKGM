@@ -3,7 +3,9 @@ package com.wdfc.chattingapp
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.ArrayAdapter
 import android.widget.Button
+import android.widget.Spinner
 import android.widget.TextView
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
@@ -27,5 +29,14 @@ class dashboard : AppCompatActivity() {
             startActivity(Intent(this, settings::class.java))
             finish()
         }
+        var spinner = findViewById<Spinner>(R.id.spinner2)
+        var a = arrayOf("item 1" , "item2")
+        var araryAdapter = ArrayAdapter<String>(
+            this,
+            android.R.layout.simple_spinner_dropdown_item,
+            a)
+
+        spinner.adapter = araryAdapter
+
     }
 }
