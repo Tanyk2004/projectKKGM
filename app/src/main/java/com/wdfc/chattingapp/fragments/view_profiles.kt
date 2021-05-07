@@ -14,7 +14,7 @@ import com.wdfc.chattingapp.R
 
 class view_profiles : Fragment(R.layout.fragment_view_profiles) {
     var selected_sort = ""
-    var items = ArrayList<Array<String>>()
+    var items = ArrayList<String>()
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
@@ -45,6 +45,18 @@ class view_profiles : Fragment(R.layout.fragment_view_profiles) {
         sort_spinner?.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
                 selected_sort = sort_spinner?.selectedItem.toString()
+                var thiefs = db.collection("lifesupport").whereEqualTo("state" , selected_sort).get()
+                        .addOnSuccessListener { document ->
+                            for ( i in document){
+                                items.add("name: " + i.get("name").toString() + "\ncontact: " + i.get("contact")+"\ncity: " + i.get("city") + "\nservice: " + i.get("service") + "\nadditional_info: " + i.get("additional_info"))
+
+
+                            }
+
+                            var list_array_adapter = activity?.let { it1 -> ArrayAdapter<String>(it1, android.R.layout.simple_list_item_1 , items) }
+                            list_view?.adapter = list_array_adapter
+                            items = ArrayList()
+                        }
             }
 
             override fun onNothingSelected(parent: AdapterView<*>?) {
@@ -57,21 +69,33 @@ class view_profiles : Fragment(R.layout.fragment_view_profiles) {
                 var thiefs = db.collection("lifesupport").whereEqualTo("state" , selected_sort).get()
                         .addOnSuccessListener { document ->
                             for ( i in document){
-                                items.add(arrayOf(i.get("name").toString() ,i.get("city").toString() ))
+                                items.add("name: " + i.get("name").toString() + "\ncontact: " + i.get("contact")+"\ncity: " + i.get("city") + "\nservice: " + i.get("service") + "\nadditional_info: " + i.get("additional_info"))
 
 
                             }
-                Toast.makeText(activity , items[0][0] , Toast.LENGTH_SHORT).show()
+                            
+                            var list_array_adapter = activity?.let { it1 -> ArrayAdapter<String>(it1, android.R.layout.simple_list_item_1 , items) }
+                            list_view?.adapter = list_array_adapter
                             items = ArrayList()
             }
 
 
 
+                var t2 = db.collection("lifesupport").whereEqualTo("state" , selected_sort).get()
+                        .addOnSuccessListener { document ->
+                            for ( i in document){
+                                items.add("name: " + i.get("name").toString() + "\ncontact: " + i.get("contact")+"\ncity: " + i.get("city") + "\nservice: " + i.get("service") + "\nadditional_info: " + i.get("additional_info"))
+
+
+                            }
+
+                            var list_array_adapter = activity?.let { it1 -> ArrayAdapter<String>(it1, android.R.layout.simple_list_item_1 , items) }
+                            list_view?.adapter = list_array_adapter
+                            items = ArrayList()
 
 
 
 
 
 
-
-}}}
+}}}}

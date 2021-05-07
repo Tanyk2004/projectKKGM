@@ -3,12 +3,12 @@
 <item
     android:id = "@+id/add_profiles"
     android:icon="@drawable/add_symbol"
-    android:title="Add profiles"
+    android:title="Add Resources"
     />
     <item
         android:id = "@+id/view_profiles"
         android:icon="@drawable/view_profiles"
-        android:title="View profiles"
+        android:title="View Resources"
         />
 
 </menu>

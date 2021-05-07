@@ -13,138 +13,6 @@
 
 
         <TextView
-            android:id="@+id/textView11"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/roboto_light"
-            android:text="Your name:"
-            android:textColor="#FFFFFF"
-            android:textSize="24sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView9"
-            app:layout_constraintVertical_bias="0.0" />
-
-        <TextView
-            android:id="@+id/textView12"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/roboto_light"
-            android:text="City:"
-            android:textColor="#FFFFFF"
-            android:textSize="24sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/txt_full_name"
-            app:layout_constraintVertical_bias="0.0" />
-
-        <TextView
-            android:id="@+id/textView13"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/roboto_light"
-            android:text="Type of service needed/provided:"
-            android:textColor="#FFFFFF"
-            android:textSize="24sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/txt_city"
-            app:layout_constraintVertical_bias="0.0" />
-
-        <TextView
-            android:id="@+id/textView14"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/roboto_light"
-            android:text="Contact Information:"
-            android:textColor="#FFFFFF"
-            android:textSize="24sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/txt_type_of_service"
-            app:layout_constraintVertical_bias="0.0" />
-
-        <EditText
-            android:id="@+id/txt_full_name"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:background="@drawable/backwithborde"
-            android:ems="10"
-            android:fontFamily="@font/roboto_light"
-            android:gravity="center"
-            android:hint="Full name"
-            android:inputType="textPersonName"
-            android:textSize="24sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView11"
-            app:layout_constraintVertical_bias="0.0" />
-
-        <EditText
-            android:id="@+id/txt_city"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:background="@drawable/backwithborde"
-            android:ems="10"
-            android:fontFamily="@font/roboto_light"
-            android:gravity="center"
-            android:hint="City"
-            android:inputType="textPersonName"
-            android:textSize="24sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView12"
-            app:layout_constraintVertical_bias="0.0" />
-
-        <EditText
-            android:id="@+id/txt_type_of_service"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:background="@drawable/backwithborde"
-            android:ems="10"
-            android:fontFamily="@font/roboto_light"
-            android:gravity="center"
-            android:hint="type of service"
-            android:inputType="textPersonName"
-            android:textSize="24sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView13"
-            app:layout_constraintVertical_bias="0.0" />
-
-        <EditText
-            android:id="@+id/txt_contact"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:background="@drawable/backwithborde"
-            android:ems="10"
-            android:fontFamily="@font/roboto_light"
-            android:gravity="center"
-            android:hint="phone no./social media/email"
-            android:inputType="textPersonName"
-            android:textSize="24sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView14"
-            app:layout_constraintVertical_bias="0.0" />
-
-        <TextView
             android:id="@+id/textView9"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -164,6 +32,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:background="@drawable/roundedbuttons"
+            android:enabled="true"
             android:text="ADD INFO"
             android:textColor="#000000"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -174,19 +43,105 @@
         <ScrollView
             android:id="@+id/scroll_view"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="32dp"
+            android:layout_height="0dp"
             app:layout_constraintBottom_toTopOf="@+id/btn_add"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/txt_contact"
-            app:layout_constraintVertical_bias="0.0">
+            app:layout_constraintTop_toBottomOf="@+id/textView9">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/state_text_view2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:clickable="true"
+                    android:fontFamily="@font/roboto_light"
+                    android:text="Name:"
+                    android:textColor="#FFFFFF"
+                    android:textSize="24sp" />
+
+                <EditText
+                    android:id="@+id/txt_full_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/backwithborde"
+                    android:ems="10"
+                    android:fontFamily="@font/roboto_light"
+                    android:gravity="center"
+                    android:hint="Full Name"
+                    android:inputType="textMultiLine"
+                    android:textSize="24sp" />
+
+                <TextView
+                    android:id="@+id/state_text_view4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:clickable="true"
+                    android:fontFamily="@font/roboto_light"
+                    android:text="City:"
+                    android:textColor="#FFFFFF"
+                    android:textSize="24sp" />
+
+                <EditText
+                    android:id="@+id/txt_city"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/backwithborde"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:fontFamily="@font/roboto_light"
+                    android:hint="City"
+                    android:inputType="textMultiLine"
+                    android:textSize="24sp" />
+
+                <TextView
+                    android:id="@+id/state_text_view5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:clickable="true"
+                    android:fontFamily="@font/roboto_light"
+                    android:text="Type of Resource Provided:"
+                    android:textColor="#FFFFFF"
+                    android:textSize="24sp" />
+
+                <EditText
+                    android:id="@+id/txt_type_of_service"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/backwithborde"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:hint="Type Of Service"
+                    android:fontFamily="@font/roboto_light"
+                    android:inputType="textMultiLine"
+                    android:textSize="24sp" />
+
+                <TextView
+                    android:id="@+id/state_text_view6"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:clickable="true"
+                    android:fontFamily="@font/roboto_light"
+                    android:text="Contact Information:"
+                    android:textColor="#FFFFFF"
+                    android:textSize="24sp" />
+
+                <EditText
+                    android:id="@+id/txt_contact"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/backwithborde"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:fontFamily="@font/roboto_light"
+                    android:hint="phone no./email/social media"
+                    android:inputType="textMultiLine"
+                    android:textSize="24sp" />
 
                 <TextView
                     android:id="@+id/state_text_view"
@@ -202,6 +157,7 @@
                     android:id="@+id/spinner"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:background="@drawable/backwithborde"
                     android:clickable="true"
                     android:spinnerMode="dropdown" />
 
@@ -220,7 +176,9 @@
                     android:layout_height="wrap_content"
                     android:background="@drawable/backwithborde"
                     android:ems="10"
+                    android:fontFamily="@font/roboto_light"
                     android:gravity="start|top"
+                    android:hint="additonal info"
                     android:inputType="textMultiLine"
                     android:textSize="24sp" />
 
@@ -236,14 +194,14 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:alpha="0"
-                    android:textSize="24sp" />
+                    android:textSize="200sp" />
 
                 <TextView
                     android:id="@+id/textView21"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:alpha="0"
-                    android:textSize="24sp" />
+                    android:textSize="200sp" />
 
             </LinearLayout>
         </ScrollView>

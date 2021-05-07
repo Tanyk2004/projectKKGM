@@ -28,6 +28,7 @@ class add_profiles : Fragment(R.layout.fragment_add_profiles) {
         var submit =  activity?.findViewById<Button>(R.id.btn_add)
         //***initialisation of views**********
 
+        submit?.isEnabled = true
 
         //********spinner*********
         var states = activity?.findViewById<Spinner>(R.id.spinner)
@@ -69,6 +70,7 @@ class add_profiles : Fragment(R.layout.fragment_add_profiles) {
             var info_profile = hashMapOf(
                     "state" to selectedState,
                     "name" to name?.text.toString(),
+                    "contact" to phone?.text.toString(),
                     "city" to city?.text.toString().trim().toLowerCase(),
                     "service" to service?.text.toString(),
                     "additional_info" to additional_information?.text.toString()
@@ -77,16 +79,24 @@ class add_profiles : Fragment(R.layout.fragment_add_profiles) {
             )
             db.collection("lifesupport").add(info_profile)
                     .addOnSuccessListener {
-                        Toast.makeText(activity,  "Your information has successfully been uploaded on the billboard" , Toast.LENGTH_SHORT).show()
+                        //toast.makeText(activity,  "Your information has successfully been uploaded on the billboard" , Toast.LENGTH_SHORT).show()
+                        submit?.text = "ADDED SUCCESSFULLY"
+                        submit?.isEnabled = false
+                        name?.text = ""
+                        city?.text = ""
+                        service?.text = ""
+                        phone?.text = ""
+                        additional_information?.text = ""
                     }
                     .addOnFailureListener {
                         Toast.makeText(activity, "There was an error please try again" , Toast.LENGTH_SHORT).show()
                     }
-            Toast.makeText(context,  selectedState , Toast.LENGTH_SHORT).show()
+
 
             }
 
     }
+
 
     private fun checkEmpty() : Boolean {
         var check = true

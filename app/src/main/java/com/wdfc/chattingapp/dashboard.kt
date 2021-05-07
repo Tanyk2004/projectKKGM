@@ -20,23 +20,25 @@ class dashboard : AppCompatActivity() {
         setContentView(R.layout.activity_dashboard)
         auth = Firebase.auth
         val user =  auth.currentUser
-        var txt1 = findViewById<TextView>(R.id.textView4)
-        val txtlength = txt1.text.toString().length
-        val unique_code = user.uid.toString().substring(0 , 4)
-        txt1.text = user.uid.toString().substring(0 , 4)
+
+
+
+        var add_chats = findViewById<Button>(R.id.btn_add_chats)
         var setting_button =findViewById<Button>(R.id.btn_settings)
         setting_button.setOnClickListener {
             startActivity(Intent(this, settings::class.java))
             finish()
         }
-        var spinner = findViewById<Spinner>(R.id.spinner2)
-        var a = arrayOf("item 1" , "item2")
-        var araryAdapter = ArrayAdapter<String>(
-            this,
-            android.R.layout.simple_spinner_dropdown_item,
-            a)
+        add_chats.setOnClickListener {
+            startActivity(Intent(this, add_chats :: class.java))
+            finish()
 
-        spinner.adapter = araryAdapter
+        }
+
+
+
+
+
 
     }
 }

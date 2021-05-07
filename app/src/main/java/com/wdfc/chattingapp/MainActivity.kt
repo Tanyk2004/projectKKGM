@@ -26,8 +26,8 @@ class MainActivity : AppCompatActivity() {
 
 
         //goes to billboard *********************
-        startActivity(Intent(this, billboard :: class.java))
-        finish()
+       // startActivity(Intent(this, billboard :: class.java))
+        //finish()
         //goes to billboard *********************
 
 

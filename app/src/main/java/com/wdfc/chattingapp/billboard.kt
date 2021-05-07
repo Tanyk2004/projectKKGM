@@ -24,7 +24,8 @@ class billboard : AppCompatActivity() {
         val db = Firebase.firestore
         var add = add_profiles()
         var view = view_profiles()
-        makeCurrentFragment(add)
+
+        makeCurrentFragment(view)
         var bottom_navigation = findViewById<BottomNavigationView>(R.id.bottom_navigation)
         bottom_navigation.setOnNavigationItemSelectedListener { 
             when (it.itemId){
