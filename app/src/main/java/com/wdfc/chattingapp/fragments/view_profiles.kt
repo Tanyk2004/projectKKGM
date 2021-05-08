@@ -56,10 +56,10 @@ class view_profiles : Fragment(R.layout.fragment_view_profiles) {
             override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
                 needselectedsort = needsortspinner?.selectedItem.toString()
                 if (needselectedsort=="need"){
-                    needselectedsort="provide"
+                    needselectedsort="Provide"
                 }
                 else if (needselectedsort=="provide"){
-                    needselectedsort="need"
+                    needselectedsort="Need"
 
                 }
                 var thiefs = db.collection("lifesupport").whereEqualTo("state" , selected_sort).whereEqualTo("profiletype" , needselectedsort).get()
@@ -81,13 +81,14 @@ class view_profiles : Fragment(R.layout.fragment_view_profiles) {
         }
 
         sort_spinner?.adapter = spinner_adapter
+        //******spinner*********
         sort_spinner?.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
                 selected_sort = sort_spinner?.selectedItem.toString()
-                var thiefs = db.collection("lifesupport").whereEqualTo("state" , selected_sort).get()
+                var thiefs = db.collection("lifesupport").whereEqualTo("state" , selected_sort).whereEqualTo("profiletype" , needselectedsort).get()
                         .addOnSuccessListener { document ->
                             for ( i in document){
-                                items.add("name: " + i.get("name").toString() + "\ncontact: " + i.get("contact")+"\ncity: " + i.get("city") + "\nservice: " + i.get("service") + "\nadditional_info: " + i.get("additional_info"))
+                                items.add("name: " + i.get("name").toString() + "\ncontact: " + i.get("contact")+"\ncity: " + i.get("city") + "\nservice: " + i.get("service") + "\nadditional info: " + i.get("additional_info"))
 
 
                             }
@@ -102,13 +103,13 @@ class view_profiles : Fragment(R.layout.fragment_view_profiles) {
 
             }
         }
-            //******spinner*********
+
 
             search?.setOnClickListener {
                 var thiefs = db.collection("lifesupport").whereEqualTo("state" , selected_sort).whereEqualTo("profiletype" , needselectedsort).get()
                         .addOnSuccessListener { document ->
                             for ( i in document){
-                                items.add("name: " + i.get("name").toString() + "\ncontact: " + i.get("contact")+"\ncity: " + i.get("city") + "\nservice: " + i.get("service") + "\nadditional_info: " + i.get("additional_info"))
+                                items.add("name: " + i.get("name").toString() + "\ncontact: " + i.get("contact")+"\ncity: " + i.get("city") + "\nservice: " + i.get("service") + "\nadditional info: " + i.get("additional_info"))
 
 
                             }
@@ -120,21 +121,10 @@ class view_profiles : Fragment(R.layout.fragment_view_profiles) {
 
 
 
-                var t2 = db.collection("lifesupport").whereEqualTo("state" , selected_sort).whereEqualTo("profiletype" , needselectedsort).get()
-                        .addOnSuccessListener { document ->
-                            for ( i in document){
-                                items.add("name: " + i.get("name").toString() + "\ncontact: " + i.get("contact")+"\ncity: " + i.get("city") + "\nservice: " + i.get("service") + "\nadditional_info: " + i.get("additional_info"))
-
-
-                            }
-
-                            var list_array_adapter = activity?.let { it1 -> ArrayAdapter<String>(it1, android.R.layout.simple_list_item_1 , items) }
-                            list_view?.adapter = list_array_adapter
-                            items = ArrayList()
 
 
 
 
 
 
-}}}}
+}}}
