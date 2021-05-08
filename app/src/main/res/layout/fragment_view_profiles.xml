@@ -19,7 +19,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="33dp"
             android:fontFamily="@font/roboto_light"
-            android:text="Sort by need/provide:"
+            android:text="Do you need/provide:"
             android:textColor="#FFFFFF"
             android:textSize="24sp"
             app:layout_constraintBottom_toBottomOf="parent"
