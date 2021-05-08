@@ -10,10 +10,5 @@ class add_chats : AppCompatActivity() {
         //overridePendingTransition(R.anim.righttoleft,R.anim.left_out)
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_add_chats)
-        //var back = findViewById<Button>(R.id.btn_back_add)
-      /* back.setOnClickListener {
-            startActivity(Intent(this, dashboard :: class.java))
-            finish()
-        }*/
-    }
-}
+
+}}

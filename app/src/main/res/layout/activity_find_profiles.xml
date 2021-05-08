@@ -5,10 +5,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#36393F"
-    tools:context=".add_chats">
+    tools:context=".find_profiles">
 
     <Button
-        android:id="@+id/btn_back_add"
+        android:id="@+id/btn_back_add1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/back_arrow"
@@ -27,8 +27,10 @@
         android:layout_height="wrap_content"
 
 
+        android:layout_marginBottom="4dp"
         android:background="@drawable/roundedbuttons"
         android:clickable="true"
+        android:elevation="15sp"
         android:hapticFeedbackEnabled="true"
         android:state_pressed="false"
         android:text="ADD CHAT"
@@ -44,7 +46,7 @@
         android:id="@+id/textView11"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="360dp"
+        android:layout_marginTop="348dp"
         android:fontFamily="@font/roboto_light"
         android:text="Enter their unique ID:"
         android:textColor="#FFFFFF"
@@ -57,10 +59,11 @@
         app:layout_constraintVertical_bias="1.0" />
 
     <EditText
-        android:id="@+id/txt_find_chat2"
+        android:id="@+id/txt_search_query"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:background="@drawable/backwithborde"
+        android:elevation="15sp"
         android:ems="10"
         android:fontFamily="@font/roboto_light"
         android:gravity="center"
@@ -79,6 +82,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="108dp"
+        android:elevation="15sp"
         android:fontFamily="@font/roboto_light"
         android:gravity="center"
         android:text="Add Chats:"

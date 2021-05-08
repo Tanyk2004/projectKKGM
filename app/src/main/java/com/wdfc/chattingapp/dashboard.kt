@@ -30,7 +30,7 @@ class dashboard : AppCompatActivity() {
             finish()
         }
         add_chats.setOnClickListener {
-            startActivity(Intent(this, add_chats :: class.java))
+            startActivity(Intent(this, find_profiles :: class.java))
             finish()
 
         }

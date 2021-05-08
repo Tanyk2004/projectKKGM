@@ -9,6 +9,7 @@
         android:roundIcon="@mipmap/info_board_icon_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.NoActionBar">
+        <activity android:name=".find_profiles"></activity>
         <activity android:name=".add_chats" />
         <activity android:name=".billboard" />
         <activity android:name=".username" />
