@@ -15,6 +15,7 @@ import com.wdfc.chattingapp.R
 class add_profiles : Fragment(R.layout.fragment_add_profiles) {
     // TODO: Rename and change types of parameters
     var selectedState = ""
+    var selectedrequest=""
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val db =  Firebase.firestore
@@ -32,13 +33,14 @@ class add_profiles : Fragment(R.layout.fragment_add_profiles) {
 
         //********spinner*********
         var states = activity?.findViewById<Spinner>(R.id.spinner)
+        var needorprovide =activity?.findViewById<Spinner>(R.id.spinner2)
 
         var stateNames = arrayOf("Andhra Pradesh","Andaman and Nicobar" ,"Arunachal Pradesh", "Assam", "Bihar","Chandigarh", "Chattisgarh","Dadra and Nagar Haveli & Daman and Diu","Delhi",
             "Goa", "Gujarat", "Haryana", "Himachal Pradesh","Jammu and Kashmir", "Jharkhand", "Karnataka", "Kerala","Ladakh", "Lakhswadeep", "Madhya Pradesh",
             "Maharashtra" , "Manipur" , "Meghalaya" , "Mizoram" , "Nagaland" , "Odisha", "Puducherry","Punjab","Rajasthan", "Sikkim", "Tamil Nadu" , "Telangana" , "Tripura" , "Uttar Pradesh",
             "Uttarakhand" , "West Bengal"
         )
-
+       var needprovide = arrayOf("Need","Provide")
         val adapter = this.activity?.let {
             ArrayAdapter<String>(
                 it,
@@ -46,11 +48,17 @@ class add_profiles : Fragment(R.layout.fragment_add_profiles) {
                 stateNames
             )
         }
-
+        val adapter2= this.activity?.let {
+            ArrayAdapter<String>(
+                    it,
+                    android.R.layout.simple_spinner_dropdown_item,
+                    needprovide
+            )
+        }
 
 
         states?.adapter = adapter
-
+        needorprovide?.adapter=adapter2
         states?.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
                 selectedState = states?.selectedItem.toString()
@@ -63,9 +71,19 @@ class add_profiles : Fragment(R.layout.fragment_add_profiles) {
 
 
         }
+        needorprovide?.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+            override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
+                selectedrequest = needorprovide?.selectedItem.toString()
+            }
+
+            override fun onNothingSelected(parent: AdapterView<*>?) {
+
+            }
+            //****spinner****
 
 
-            submit?.setOnClickListener{
+        }
+                 submit?.setOnClickListener{
 
             var info_profile = hashMapOf(
                     "state" to selectedState,
@@ -73,7 +91,8 @@ class add_profiles : Fragment(R.layout.fragment_add_profiles) {
                     "contact" to phone?.text.toString(),
                     "city" to city?.text.toString().trim().toLowerCase(),
                     "service" to service?.text.toString(),
-                    "additional_info" to additional_information?.text.toString()
+                    "additional_info" to additional_information?.text.toString(),
+                    "profiletype" to selectedrequest
 
 
             )

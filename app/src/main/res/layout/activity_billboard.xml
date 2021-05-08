@@ -36,7 +36,7 @@
         android:layout_height="wrap_content"
         android:fontFamily="@font/roboto_light"
         android:gravity="center"
-        android:text="LIFESUPPORT BILLBOARD"
+        android:text="LIFESUPPORT INFOBOARD"
         android:textSize="36sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
