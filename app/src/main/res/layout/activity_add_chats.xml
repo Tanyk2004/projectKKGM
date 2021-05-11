@@ -22,7 +22,7 @@
         app:layout_constraintVertical_bias="0.023" />
 
     <Button
-        android:id="@+id/btn_profile2"
+        android:id="@+id/btn_add_chat"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
 

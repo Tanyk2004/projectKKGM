@@ -16,8 +16,15 @@ class find_profiles : AppCompatActivity() {
         val db = Firebase.firestore
         var back = findViewById<Button>(R.id.btn_back_add1)
         var id = findViewById<TextView>(R.id.txt_search_query)
-        var search = findViewById<Button>(R.id.btn_profile2)
 
+        var add_chat = findViewById<Button>(R.id.btn_add_chat)
+        add_chat.setOnClickListener {
+            var query = id.text.toString().trim()
+            db.collection("users").whereEqualTo("unique_id" , query).get()
+                    .addOnSuccessListener {
+
+                    }
+        }
         back.setOnClickListener {
             startActivity(Intent(this, dashboard :: class.java))
             finish()
