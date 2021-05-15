@@ -1,18 +1,15 @@
 package com.wdfc.chattingapp
 
 import android.content.Intent
+import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
-import android.widget.Button
-import android.widget.TextView
-import android.widget.Toast
+import android.widget.*
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
-import org.w3c.dom.Text
 
 class username : AppCompatActivity() {
     var data = ArrayList<String>()
@@ -28,8 +25,50 @@ class username : AppCompatActivity() {
         val user : FirebaseUser? = auth.currentUser
         user_uid = user?.uid.toString()
         val db = Firebase.firestore
+        val imgbtn1 = findViewById<ImageButton>(R.id.imageButton)
+        val imgbtn2 = findViewById<ImageButton>(R.id.imageButton2)
+        val imgbtn3 = findViewById<ImageButton>(R.id.imageButton3)
+        val imgbtn4 = findViewById<ImageButton>(R.id.imageButton4)
+        val imgbtn5 = findViewById<ImageButton>(R.id.imageButton5)
+        imgbtn1.setOnClickListener{
 
+            imgbtn2.isEnabled=!imgbtn2.isEnabled
+            imgbtn3.isEnabled=!imgbtn3.isEnabled
+            imgbtn4.isEnabled=!imgbtn4.isEnabled
+            imgbtn5.isEnabled=!imgbtn5.isEnabled
 
+        }
+        imgbtn2.setOnClickListener{
+
+            imgbtn1.isEnabled=!imgbtn1.isEnabled
+            imgbtn3.isEnabled=!imgbtn3.isEnabled
+            imgbtn4.isEnabled=!imgbtn4.isEnabled
+            imgbtn5.isEnabled=!imgbtn5.isEnabled
+
+        }
+        imgbtn3.setOnClickListener{
+
+            imgbtn2.isEnabled=!imgbtn2.isEnabled
+            imgbtn1.isEnabled=!imgbtn1.isEnabled
+            imgbtn4.isEnabled=!imgbtn4.isEnabled
+            imgbtn5.isEnabled=!imgbtn5.isEnabled
+
+        }
+        imgbtn4.setOnClickListener{
+
+            imgbtn2.isEnabled=!imgbtn2.isEnabled
+            imgbtn3.isEnabled=!imgbtn3.isEnabled
+            imgbtn1.isEnabled=!imgbtn1.isEnabled
+            imgbtn5.isEnabled=!imgbtn5.isEnabled
+
+        }
+        imgbtn5.setOnClickListener{
+            imgbtn2.isEnabled=!imgbtn2.isEnabled
+            imgbtn3.isEnabled=!imgbtn3.isEnabled
+            imgbtn4.isEnabled=!imgbtn4.isEnabled
+            imgbtn1.isEnabled=!imgbtn1.isEnabled
+
+        }
 
 
         var profile_button = findViewById<Button>(R.id.btn_profile)
